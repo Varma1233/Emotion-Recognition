@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - Emotion Detection by Voice</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm p-4">
+            <div class="max-w-2xl mx-auto flex justify-between items-center">
+                <a href="#" class="text-xl font-semibold text-indigo-600">VoiceEmotion</a>
+                <div class="space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">About</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow max-w-2xl mx-auto w-full px-4 py-8" x-data="{ activeSection: null }">
+            <header class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">Terms and Conditions</h1>
+                <p class="text-gray-600">Last updated: March 20, 2025</p>
+            </header>
+
+            <p class="mb-6">Welcome to our Emotion Detection by Voice service. By using our service, you agree to the following terms and conditions:</p>
+            
+            <!-- Accordion Style Terms -->
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 1 ? null : 1"
+                    >
+                        1. Acceptance of Terms
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 1}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 1"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>By accessing and using our service, you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 2 ? null : 2"
+                    >
+                        2. Description of Service
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 2}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 2"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>Our service allows users to detect emotions through voice analysis. The accuracy of the emotion detection may vary and is not guaranteed.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 3 ? null : 3"
+                    >
+                        3. Privacy and Data Protection
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 3}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 3"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>We are committed to protecting your privacy. All voice data provided by users will be processed in accordance with our Privacy Policy. We do not share your data with third parties without your consent.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 4 ? null : 4"
+                    >
+                        4. User Responsibilities
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 4}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 4"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>Users are responsible for ensuring that their use of the service complies with all applicable laws and regulations. Users must not use the service for any unlawful or harmful purposes.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 5 ? null : 5"
+                    >
+                        5. Limitation of Liability
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 5}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 5"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>We are not liable for any damages or losses resulting from the use of our service. The service is provided "as is" without any warranties of any kind.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 6 ? null : 6"
+                    >
+                        6. Changes to Terms
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 6}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 6"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>We reserve the right to modify these terms at any time. Any changes will be posted on this page, and your continued use of the service constitutes acceptance of the new terms.</p>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-md overflow-hidden">
+                    <button 
+                        class="w-full px-4 py-3 text-left font-medium flex justify-between items-center bg-white hover:bg-gray-50"
+                        @click="activeSection = activeSection === 7 ? null : 7"
+                    >
+                        7. Contact Information
+                        <svg class="w-5 h-5 transform transition-transform" :class="{'rotate-180': activeSection === 7}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div 
+                        class="px-4 py-3 bg-white text-gray-600" 
+                        x-show="activeSection === 7"
+                        x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                    >
+                        <p>If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:support@example.com" class="text-indigo-600 hover:underline">support@example.com</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="/index.html">
+                <button  class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition-colors">
+                    Accept Terms
+                </button></a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white shadow-sm py-6 mt-8">
+            <div class="max-w-2xl mx-auto px-4 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 VoiceEmotion. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-indigo-600">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-indigo-600">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-indigo-600">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

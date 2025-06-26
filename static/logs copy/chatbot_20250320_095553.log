@@ -1,0 +1,4 @@
+2025-03-20 09:55:53,584 - WARNING:  * Debugger is active!
+2025-03-20 09:55:53,587 - INFO:  * Debugger PIN: 503-126-300
+2025-03-20 09:55:53,608 - INFO: 10.10.55.154 - - [20/Mar/2025 09:55:53] "[33mGET / HTTP/1.1[0m" 404 -
+2025-03-20 09:57:51,739 - INFO:  * Detected change in 'c:\\Users\\Varma Choudam\\OneDrive\\Desktop\\Final Project\\Chatbot\\backend\\app.py', reloading

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <style>
+        body,
+        html {
+            font-family: "Lato", sans-serif;
+            scroll-behavior: smooth !important;
+        }
+
+        .gradiant-articles {
+            background-color: #ffffff;
+            background-image: radial-gradient(#db80ff 0.5px, transparent 0.5px), radial-gradient(#db80ff 0.5px, #ffffff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+
+        .video-block:hover button {
+            color: rgb(168, 85, 247);
+        }
+
+        .scroll {
+            position: relative;
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+        }
+
+        .scroll div {
+            white-space: nowrap;
+            animation: scroll var(--time) linear infinite;
+            animation-delay: calc(var(--time)*-1);
+
+        }
+
+        .scroll div:nth-child(2) {
+            animation: scroll2 var(--time) linear infinite;
+            animation-delay: calc(var(--time)/-2);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes scroll2 {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+
+        .scroll div span {
+            display: inline-flex;
+            margin: 10px;
+            letter-spacing: 0.2em;
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        .scroll div span:hover {
+            background: #3fd2f9;
+            cursor: pointer;
+        }
+
+        .imgBox div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imgBox img {
+            max-width: 100px;
+            scale: 0.8;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+    <header>
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-10">
+            <nav class="flex px-4 xl:px-0" aria-label="Global">
+                <a class="text-2xl font-semibold" href="#">Emotion Analysis</a>
+                <div class="flex flex-row items-center gap-5 ml-auto">
+                    <a class="font-medium" href="#" aria-current="page">Home</a>
+                    <a class="font-medium text-gray-600 hover:text-white" href="../static/blogs/aboutus.html" >About Us</a>
+                    <a class="font-medium text-gray-600 hover:text-white" href="#works">Works</a>
+                    <a class="font-medium text-gray-600 hover:text-white" href="#articles">Articles</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="hero" class="bg-gradient-to-b from-black to-slate-950">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">
+            <div class="gap-x-6 px-4 py-16 pb-64 mx-auto lg:grid xl:px-0 lg:grid-cols-12">
+                <h1 id="typing" class="font-sans font-semibold text-gray-600 lg:col-span-12">
+                    Discover the Power of Emotion Analysis
+                </h1>
+                <div data-aos="fade-down" data-aos-delay="50" class="mt-3 text-white lg:col-span-8 lg:mt-6">
+                    <h2 class="text-5xl font-medium lg:text-7xl">Analyze emotions from<span
+                            class="text-purple-500 font-bold"
+                            style="font-family: 'Nothing You Could Do', cursive;"> voice, text, and audio</span>
+                        <br class="max-sm:hidden lg:hidden xl:block"> effortlessly
+                    </h2>
+                </div>
+                <div data-aos="fade-down" data-aos-delay="100" class="lg:col-start-9 lg:col-span-4">
+                    <p class="max-w-3xl mt-4 text-gray-400 text-[20px] leading-[26px] lg:mt-8">
+                        Get real-time insights to transform your understanding of emotions.
+                    </p>
+                    <div class="flex mt-8 space-x-2 md:space-x-6">
+                        <a href="#works" class="bg-purple-500 text-white font-bold py-2 px-6 rounded-3xl">
+                            Get started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="imageHero" class="bg-white py-10">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">      
+            <p data-aos="fade-down" data-aos-delay="200" href="/"
+                class="object-fill border border-black video-block block mx-auto mt-[-200px] relative bg-gray-900 rounded w-full aspect-video max-w-[600px]"
+                style="background-image:url(../static/imgs/emotional\ rollercoaster\ _\ gif.gif);background-size:cover;background-position:center;">
+            </p>
+            <div class="flex flex-col text-center pb-20 pt-20 lg:pt-28 pb-10 text-black max-w-screen-md mx-auto">
+                <h2 class="text-4xl font-medium lg:text-7xl">Our <span class="text-purple-500 font-bold"
+                        style="font-family: 'Nothing You Could Do', cursive;">Features</span></h2>
+                <span class="text-gray-600 pt-5 text-[20px] leading-[26px]">
+                    Discover a system designed for seamless emotion analysis, 
+                    tailored to meet your needs with cutting-edge technology and an intuitive interface.
+                </span>
+            </div>
+            <div class="pb-10 lg:pb-20">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div>
+                        <svg class="w-8 h-8" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 2H9C7.34315 2 6 3.34315 6 5V25C6 26.6569 7.34315 28 9 28H21C22.6569 28 24 26.6569 24 25V5C24 3.34315 22.6569 2 21 2Z"
+                                fill="#4299E1" />
+                            <path
+                                d="M11 8H19C19.5523 8 20 8.44772 20 9C20 9.55228 19.5523 10 19 10H11C10.4477 10 10 9.55228 10 9C10 8.44772 10.4477 8 11 8Z"
+                                fill="#2D3748" />
+                            <path
+                                d="M11 13H19C19.5523 13 20 13.4477 20 14C20 14.5523 19.5523 15 19 15H11C10.4477 15 10 14.5523 10 14C10 13.4477 10.4477 13 11 13Z"
+                                fill="#2D3748" />
+                            <path
+                                d="M11 18H15C15.5523 18 16 18.4477 16 19C16 19.5523 15.5523 20 15 20H11C10.4477 20 10 19.5523 10 19C10 18.4477 10.4477 18 11 18Z"
+                                fill="#2D3748" />
+                            <path
+                                d="M25 9.5C25 8.67157 24.3284 8 23.5 8H20.5C19.6716 8 19 8.67157 19 9.5V12.5C19 13.3284 19.6716 14 20.5 14H23.5C24.3284 14 25 13.3284 25 12.5V9.5Z"
+                                fill="#63B3ED" />
+                        </svg>                        
+                        <h2 class="mt-4 text-xl font-semibold text-gray-800">Text-Based Emotion Analysis</h2>
+                        <p class="mt-2 text-gray-500">Input text to detect emotions in written content, 
+                            including social media posts, emails, or user feedback.</p>
+                    </div>
+
+                    <div>
+                        <svg class="w-8 h-8" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="15" cy="15" r="14" stroke="#4299E1" stroke-width="2" />
+                            <path
+                                d="M11 15C11 14.4477 11.4477 14 12 14H18C18.5523 14 19 14.4477 19 15C19 15.5523 18.5523 16 18 16H12C11.4477 16 11 15.5523 11 15Z"
+                                fill="#2D3748" />
+                            <path
+                                d="M9 11C9 10.4477 9.44772 10 10 10H20C20.5523 10 21 10.4477 21 11C21 11.5523 20.5523 12 20 12H10C9.44772 12 9 11.5523 9 11Z"
+                                fill="#2D3748" />
+                            <path
+                                d="M7 19C7 18.4477 7.44772 18 8 18H22C22.5523 18 23 18.4477 23 19C23 19.5523 22.5523 20 22 20H8C7.44772 20 7 19.5523 7 19Z"
+                                fill="#2D3748" />
+                            <circle cx="15" cy="15" r="6" fill="#63B3ED" />
+                            <path
+                                d="M13 15C13 14.4477 13.4477 14 14 14H16C16.5523 14 17 14.4477 17 15C17 15.5523 16.5523 16 16 16H14C13.4477 16 13 15.5523 13 15Z"
+                                fill="#2D3748" />
+                        </svg>                        
+                        <h2 class="mt-4 text-xl font-semibold text-gray-800">Real-Time Emotion Detection</h2>
+                        <p class="mt-2 text-gray-500">Analyze emotions as they happen using live audio input from your microphone.
+                             Perfect for real-time applications like customer support and therapy sessions.</p>
+                    </div>
+
+                    <div>
+                        <svg class="w-8 h-8" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path
+                                    d="M23 4H7C5.34315 4 4 5.34315 4 7V23C4 24.6569 5.34315 26 7 26H23C24.6569 26 26 24.6569 26 23V7C26 5.34315 24.6569 4 23 4Z"
+                                    fill="#4299E1" />
+                                <path
+                                    d="M15 10L11 14H14V18H16V14H19L15 10Z"
+                                    fill="#2D3748" />
+                                <path
+                                    d="M10 20H20C20.5523 20 21 20.4477 21 21C21 21.5523 20.5523 22 20 22H10C9.44772 22 9 21.5523 9 21C9 20.4477 9.44772 20 10 20Z"
+                                    fill="#2D3748" />
+                                <path
+                                    d="M10 17H14C14.5523 17 15 17.4477 15 18C15 18.5523 14.5523 19 14 19H10C9.44772 19 9 18.5523 9 18C9 17.4477 9.44772 17 10 17Z"
+                                    fill="#2D3748" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="30" height="30" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>                        
+                        <h2 class="mt-4 text-xl font-semibold text-gray-800">Audio Based</h2>
+                        <p class="mt-2 text-gray-500">Speak to detect emotions in real-time. Click Start Recording to capture your voice, and once you click Stop Recording, our system will analyze and reveal the detected emotion instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="works" class="bg-black">
+        <div class="max-w-screen-xl sm:px-7 px-4 py-10 lg:py-20 mx-auto">
+            <!-- How It Works Section Moved to Top -->
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-medium lg:text-5xl">
+                    How It <span class="text-purple-500 font-bold" style="font-family: 'Nothing You Could Do', cursive;">Works</span>
+                </h2>
+                <div class="mt-4">
+                    <span class="inline-block w-40 h-1 bg-purple-500 rounded-full"></span>
+                    <span class="inline-block w-3 h-1 mx-1 bg-purple-500 rounded-full"></span>
+                    <span class="inline-block w-1 h-1 bg-purple-500 rounded-full"></span>
+                </div>
+            </div>
+            <!-- Card Section (3 Boxes in a Row) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Text-Based Emotion Analysis -->
+                <div class="border rounded-lg bg-white flex flex-col justify-between h-full">
+                    <div class="p-6">
+                        <h2 class="text-xl font-medium text-gray-700 capitalize lg:text-2xl">
+                            Text-Based ChatBot Emotion Analysis
+                        </h2>
+                        <p class="mt-4 text-gray-500">
+                            Analyze written text to uncover emotions within emails, social media posts, or user feedback.
+                        </p>
+                        <p class="mt-1 text-gray-500">
+                            Enter your text, and our system will provide precise emotional classification and sentiment analysis.
+                        </p>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg font-medium text-gray-700 capitalize lg:text-xl">
+                            Key Features:
+                        </h2>
+                        <ul class="mt-4 space-y-2">
+                            <li class="text-gray-700">Supports multiple languages</li>
+                            <li class="text-gray-700">Suitable for social media monitoring, user reviews, and sentiment analysis</li>
+                            <li class="text-gray-700">Provides insights into anger, joy, sadness, and more</li>
+                        </ul>
+                        <a href="/text" class="block w-full px-4 py-2 mt-6 text-center text-white bg-purple-500 rounded-full hover:bg-purple-600">
+                            Start Now
+                        </a>
+                    </div>
+                </div>
+                <!-- Audio-Based Emotion Analysis -->
+                <div class="border rounded-lg bg-white flex flex-col justify-between h-full">
+                    <div class="p-6">
+                        <h2 class="text-xl font-medium text-gray-700 capitalize lg:text-2xl">
+                            Audio-Based Emotion Analysis
+                        </h2>
+                        <p class="mt-4 text-gray-500">
+                            Speak to detect emotions in real-time.
+                        </p>
+                        <p class="mt-1 text-gray-500">
+                            Click Start Recording to capture your voice, and our system will analyze and reveal the detected emotion instantly.
+                        </p>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg font-medium text-gray-700 capitalize lg:text-xl">
+                            Key Features:
+                        </h2>
+                        <ul class="mt-4 space-y-2">
+                            <li class="text-gray-700">Real-time voice emotion detection</li>
+                            <li class="text-gray-700">Accurate and instant results</li>
+                            <li class="text-gray-700">Ideal for personal and professional use</li>
+                        </ul>
+                        <a href="/voice" class="block w-full px-4 py-2 mt-6 text-center text-white bg-purple-500 rounded-full hover:bg-purple-600">
+                            Start Now
+                        </a>
+                    </div>
+                </div>
+                <!-- Real-Time text Emotion Detection -->
+             <div class="border rounded-lg bg-white flex flex-col justify-between h-full">
+                    <div class="p-6">
+                        <h2 class="text-xl font-medium text-gray-700 capitalize lg:text-2xl">
+                            Real-Time Text Based
+                        </h2>
+                        <p class="mt-4 text-gray-500">
+                            Real-Time Emotion that reads your text and instantly detects emotions.And also shows the emotion in a progress format.
+                        </p>
+                        <p class="mt-1 text-gray-500">
+                            It uses deep learning models to provide accurate, empathetic feedback in real-time.
+                        </p>
+                    </div>
+                    <hr class="border-gray-200">
+                    <div class="p-6">
+                        <h2 class="text-lg font-medium text-gray-700 capitalize lg:text-xl">
+                            Key Features:
+                        </h2>
+                        <ul class="mt-4 space-y-2">
+                            <li class="text-gray-700">Real-time text input</li>
+                            <li class="text-gray-700">Instant emotion detection</li>
+                            <li class="text-gray-700">Shows the accurate</li>
+                        </ul>
+                        <a href="/real-text" class="block w-full px-4 py-2 mt-6 text-center text-white bg-purple-500 rounded-full hover:bg-purple-600">
+                            Start Now
+                        </a>
+                    </div>
+                </div> 
+        
+            </div>
+        </div>
+    </section>
+    <section id="articles" class="bg-white text-black gradiant-articles">
+        <div class="mx-auto p-4 sm:px-7 px-4 max-w-screen-xl">
+            <div class="flex flex-col text-center pt-10 pb-10 lg:pb-20 text-black max-w-screen-md mx-auto">
+                <h2 class="text-4xl font-medium lg:text-7xl">Explore Our <span class="text-purple-500 font-bold"
+                        style="font-family: 'Nothing You Could Do', cursive;">
+                        Blog and Articles </span></h2>
+                <span class="text-gray-600 pt-5 text-[20px] leading-[26px]">
+                    Stay updated with the latest insights, tips, and trends in emotion analysis, artificial intelligence, and mental health.
+                </span>
+            </div>
+            <ul class="grid grid-cols-12 gap-x-6 pb-10">
+                <li class="col-span-12 md:col-span-4 mb-10 md:mb-0">
+                    <article>
+                        <header class="pb-4">
+                            <figure class="rounded overflow-hidden mb-4 border border-black">
+                                <a href="../static/blogs/blog1.html" class="block">
+                                    <img class="w-full hover:scale-125 transition duration-300"
+                                        src="../static/imgs/More Braaain.gif"
+                                        alt="">
+                                </a>
+                            </figure>
+                            <ul class="flex mb-2">
+                                <li class="mr-2">
+                                    <a href="../static/blogs/blog1.html"
+                                        class="rounded-3xl bg-purple-500 text-white p-1 px-4 text-xs block hover:bg-purple-600">Blog</a>
+                                </li>
+                            </ul>
+                            <h3 class="text-xl font-bold">
+                                <a href="../static/blogs/blog1.html" class="block hover:underline hover:text-purple-600">
+                                    The Science Behind Emotion Analysis
+                                </a>
+                            </h3>
+                        </header>
+                        <footer class="flex items-center">
+                           
+                            <div>
+                                <span class="font-light">By </span>
+                                <a href="../static/blogs/aboutus.html" class="hover:underline">Surendra</a>
+                            </div>
+                        </footer>
+                    </article>
+                </li>
+                <li class="col-span-12 md:col-span-4 mb-10 md:mb-0">
+                    <article>
+                        <header class="pb-4">
+                            <figure class="rounded overflow-hidden mb-4 border border-black">
+                                <a href="../static/blogs/blog2.html" class="block">
+                                    <img class="w-full hover:scale-125 transition duration-300"
+                                        src="../static/imgs/WAVE WARP.gif"  alt="">
+                                </a>
+                            </figure>
+                            <ul class="flex mb-2">
+                                <li class="mr-2">
+                                    <a href="../static/blogs/blog2.html "
+                                        class="rounded-3xl bg-purple-500 text-white p-1 px-4 text-xs block hover:bg-purple-600">Blog</a>
+                                </li>
+                            </ul>
+                            <h3 class="text-xl font-bold">
+                                <a href="../static/blogs/blog2.html" class="block hover:underline hover:text-purple-600">
+                                    Improving Mental Health with Emotion Detection
+                                </a>
+                            </h3>
+                        </header>
+                        <footer class="flex items-center">
+                            
+                            <div>
+                                <span class="font-light">By </span>
+                                <a href="https://www.linkedin.com/in/siva-neelakantha-varma-choudam-96b5ba280/" class="hover:underline">Varma</a>
+                            </div>
+                        </footer>
+                    </article>
+                </li>
+                <li class="col-span-12 md:col-span-4 mb-10 md:mb-0">
+                    <article>
+                        <header class="pb-4">
+                            <figure class="rounded overflow-hidden mb-4 border border-black">
+                                <a href="../static/blogs/blog3.html" class="block">
+                                    <img class="w-full hover:scale-125 transition duration-300"
+                                        src= "../static/imgs/colorful _sound waves_.gif" alt="">
+                                </a>
+                            </figure>
+                            <ul class="flex mb-2">
+                                <li class="mr-2">
+                                    <a href="../static/blogs/blog3.html"
+                                        class="rounded-3xl bg-purple-500 text-white p-1 px-4 text-xs block hover:bg-purple-600">Blog</a>
+                                </li>
+                            </ul>
+                            <h3 class="text-xl font-bold">
+                                <a href="../static/blogs/blog3.html" class="block hover:underline hover:text-purple-600">
+                                    Emotion Analysis in Customer Service
+                                </a>
+                            </h3>
+                        </header>
+                        <footer class="flex items-center">
+                            
+                            <div>
+                                <span class="font-light">By </span>
+                                <a href="../static/blogs/aboutus.html" class="hover:underline">Gopi Kalyan</a>
+                            </div>
+                        </footer>
+                    </article>
+                </li>
+            </ul>
+            <div class="flex flex-col text-center pt-10 pb-10 text-black max-w-screen-md mx-auto">
+                <h2 class="text-4xl font-medium lg:text-7xl">
+                    <span class="text-purple-500 font-bold"
+                        style="font-family: 'Nothing You Could Do', cursive;">Technos</span> we use
+                </h2>
+            </div>
+            <div class="mx-auto mb-10">
+                <div class="scroll imgBox" style="--time:20s">
+                    <div>
+                        <img class="grayscale" src="../static/imgs/logos/html.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/css.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/js.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/React.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/angular.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/figma.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/photoshop.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/mui.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/tailwind.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/premierePro.png" alt="">
+                    </div>
+                    <div>
+                        <img class="grayscale" src="../static/imgs/logos/html.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/css.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/js.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/React.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/angular.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/figma.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/photoshop.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/mui.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/tailwind.png" alt="">
+                        <img class="grayscale" src="../static/imgs/logos/premierePro.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white">
+        <div class="max-w-screen-xl sm:px-7 px-4 py-10 lg:py-20 mx-auto">
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+                <div class="sm:col-span-2">
+                    <h2 class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl">Subscribe our
+                        <span class="text-purple-500 font-bold"
+                            style="font-family: 'Nothing You Could Do', cursive;">newsletter</span> to get update.</h2>
+
+                    <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+                        <input id="email" type="text"
+                            class="px-4 py-2 text-gray-700 bg-white border focus:outline-purple-500 rounded-full"
+                            placeholder="Email Address">
+
+                        <button
+                            class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transform md:w-auto md:mx-4 bg-purple-500 rounded-full hover:bg-purple-600">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-gray-800 ">Quick Link</p>
+
+                    <div class="flex flex-col items-start mt-5 space-y-2">
+                        <a href="#" class="text-gray-600 hover:underline hover:text-purple-600">Home</a>
+                        <a href="../static/blogs/aboutus.html" class="text-gray-600 hover:underline hover:text-purple-600">Features</a>
+                        <a href="../static/blogs/aboutus.html" class="text-gray-600 hover:underline hover:text-purple-600">About Us</a>
+                        <a href="../static/blogs/aboutus.html" class="text-gray-600 hover:underline hover:text-purple-600">Contact Us</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-gray-800 ">Others</p>
+                    <div class="flex flex-col items-start mt-5 space-y-2">
+                        <a href="../static/blogs/terms.html" class="text-gray-600 hover:underline hover:text-purple-600">Terms & Conditions</a>
+                        <a href="../static/blogs/privacy.html" class="text-gray-600 hover:underline hover:text-purple-600">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script>
+        var app = document.getElementById('typing');
+
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+
+        typewriter.typeString('Discover the Power of Emotion Analysis')
+            .pauseFor(5000)
+            .start();
+    </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

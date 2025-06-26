@@ -1,0 +1,17 @@
+2025-04-15 12:14:33,553 - INFO: Received message: hello
+2025-04-15 12:14:33,664 - INFO: Transformer emotions: {'joy': 0.9343695044517517}
+2025-04-15 12:14:33,664 - INFO: VADER sentiment: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-04-15 12:14:33,664 - INFO: Combined analysis: {'joy': 0.9343695044517517}
+2025-04-15 12:14:33,665 - INFO: Detected emotion: joy (0.9344)
+2025-04-15 12:14:50,157 - INFO: Received message: how are you
+2025-04-15 12:14:50,226 - INFO: Transformer emotions: {'joy': 0.49786144495010376}
+2025-04-15 12:14:50,227 - INFO: VADER sentiment: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-04-15 12:14:50,227 - INFO: Combined analysis: {'joy': 0.49786144495010376}
+2025-04-15 12:14:50,227 - INFO: Detected emotion: joy (0.4979)
+2025-04-15 12:14:51,710 - INFO: Generated response: I'm doing well, thank you!  It's nice to connect with someone who seems to be in good spirits.  How can I help you today?
+2025-04-15 12:15:23,069 - INFO: Received message: i had done my breakup recently
+2025-04-15 12:15:23,160 - INFO: Transformer emotions: {'anger': 0.8065764307975769}
+2025-04-15 12:15:23,161 - INFO: VADER sentiment: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-04-15 12:15:23,161 - INFO: Combined analysis: {'anger': 0.8065764307975769}
+2025-04-15 12:15:23,162 - INFO: Detected emotion: anger (0.8066)
+2025-04-15 12:15:24,888 - INFO: Generated response: I'm so sorry to hear that. Breakups are incredibly tough. It's completely understandable to feel angry right now.  Do you want to talk about it?  I'm here to listen.
